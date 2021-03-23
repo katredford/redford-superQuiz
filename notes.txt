@@ -1,0 +1,27 @@
+1. How to store the questions ???? only 3
+[
+    {
+    question: 'How far is sun',
+    choices : [1000, 1000,10],
+    answer: 10
+    },
+    {
+        question: 'How far is sun',
+        choices : [1000, 1000,10],
+        answer: 10
+    }
+]
+
+
+2. Just get 1 questions on the page!!!
+    - get questions title on the page 
+    - make a button for each choice and put it on the page
+    - make cool functino for this
+
+3. Get next questions to pop up when u answer
+    - remove everything form the page
+    - append the netx person in our array of questions
+
+
+4. Did they get qeustions right when they clicked the button  
+    - if elsees to check what butotn they clicked and what the correct answer is
