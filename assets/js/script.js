@@ -17,13 +17,13 @@ var questions = [
 
 var score = 0
 
-for( var i=0; i < questions.length; i++){
+// for( var i=0; i < questions.length; i++){
     var response = window.prompt(questions[i].prompt);
     if(response == questions[i].answer){
-        score==;
+        score++;
         alert("correct!");
     } else {
         alert("WRONG!");
     }
 }
-alert("you got " + score + "/" questions.lenght);
+alert("you got " + score + "/" + questions.length)
