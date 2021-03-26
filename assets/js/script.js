@@ -1,29 +1,36 @@
-var questions = [
-    {
-        prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
-        answer: "a"
-    },
+// var questions = [
+//     {
+//         prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
+//         answer: "a"
+//     },
 
-    {
-        prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
-        answer: "a"
-    },
+//     {
+//         prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
+//         answer: "a"
+//     },
 
-    {
-        prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
-        answer: "a"
-    },
-]
+//     {
+//         prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
+//         answer: "a"
+//     },
+// ]
 
-var score = 0
+// var score = 0
 
-// for( var i=0; i < questions.length; i++){
-    var response = window.prompt(questions[i].prompt);
-    if(response == questions[i].answer){
-        score++;
-        alert("correct!");
-    } else {
-        alert("WRONG!");
-    }
+// // for( var i=0; i < questions.length; i++){
+//     var response = window.prompt(questions[i].prompt);
+//     if(response == questions[i].answer){
+//         score++;
+//         alert("correct!");
+//     } else {
+//         alert("WRONG!");
+//     }
+// 
+var startButton = document.getElementById("start-btn")
+
+startButton.addEventListener("click",startGame)
+
+function startGame() {
+console.log('started')
 }
-alert("you got " + score + "/" + questions.length)
+

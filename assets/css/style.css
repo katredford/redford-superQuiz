@@ -18,7 +18,7 @@ body {
     width: 500px;
     max-width: 80%;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 25px;
     padding: 10px; 
     box-shadow: 0 0 10px 2px;
 }
@@ -26,4 +26,15 @@ body {
 .btn-grid {
     display: grid;
     gap: 10px;
+}
+
+.btn {
+    background-color: purple;
+    border-radius: 25px;
+    color: seashell;
+}
+
+.btn:hover{
+    background-color: salmon;
+    color: slateblue;
 }
