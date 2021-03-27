@@ -1,11 +1,4 @@
-var questions = [
-    {
-        question: "What 4 moons of jupiter did galileo discover?",
-        answer: [
-            {text: "4", correct: true },
-            {text: "22", correct: false }
-        ]
-    },
+
 
     // {
     //     prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
@@ -16,7 +9,7 @@ var questions = [
     //     prompt: "What 4 moons of jupiter did galileo discover? \n (a)farts \n (b)parts \n (c) darts",
     //     answer: "a"
     // },
-]
+
 
 // var score = 0
 
@@ -29,45 +22,81 @@ var questions = [
 //         alert("WRONG!");
 //     }
 // 
-var startButton = document.getElementById("start-btn")
-var questionContainerElement = document.getElementById("question-container")
-var questionElement = document.getElementById("question")
-var answerButtonsElement = document.getElementById("answer-buttons")
+var startButton = document.getElementById('start-btn')
+var nextButton = document.getElementById('next-btn')
+var questionContainerElement = document.getElementById('question-container')
+var questionElement = document.getElementById('question')
+var answerButtonsElement = document.getElementById('answer-buttons')
 
 var shuffledQuestions, currentQuestionIndex
 
-
-
-startButton.addEventListener("click",startGame)
+startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++
+  setNextQuestion()
+})
 
 function startGame() {
-console.log('started')
-startButton.classList.add("hide")
-shuffledQuestions = questions.sort(() => Math.random() - .5)
-currentQuestionIndex = 0;
-questionContainerElement.classList.remove("hide")
-nextQuestion()
+  startButton.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  currentQuestionIndex = 0
+  questionContainerElement.classList.remove('hide')
+  setNextQuestion()
 }
 
-function nextQuestion() {
-    showQuestion(shuffledQuestions[currentQuestionIndex])
+function setNextQuestion() {
+  resetState()
+  showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        var button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener("click", selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
+  questionElement.innerText = question.question
+  question.answers.forEach(answer => {
+    var button = document.createElement('button')
+    button.innerText = answer.text
+    button.classList.add('btn')
+    if (answer.correct) {
+      button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtonsElement.appendChild(button)
+  })
+}
 
+function resetState() {
+  clearStatusClass(document.body)
+  nextButton.classList.add('hide')
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+  }
 }
 
 function selectAnswer(e) {
-
+//   var selectedButton = e.target
+  
 }
+
+function setStatusClass(element, correct) {
+  clearStatusClass(element)
+  if (correct) {
+    element.classList.add('correct')
+  } else {
+    element.classList.add('wrong')
+  }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove('correct')
+  element.classList.remove('wrong')
+}
+
+var questions = [
+  {
+    question: 'What is 2 + 2?',
+    answers: [
+      { text: '4', correct: true },
+      { text: '22', correct: false }
+    ]
+  },
+  
+]
