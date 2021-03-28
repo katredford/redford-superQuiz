@@ -45,7 +45,7 @@ function startGame() {
 }
 
 function setNextQuestion() {
-  resetState()
+  
   showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
@@ -90,13 +90,32 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 }
 
-var questions = [
-  {
-    question: 'What is 2 + 2?',
-    answers: [
-      { text: '4', correct: true },
-      { text: '22', correct: false }
-    ]
+var questions = {
+         'how long does it take for a photon in the center of the sun to reach the surface?': {
+             "correct" : 'one million years',
+             "list" : ["one million years", "6 years", "one billion years", "one trillion years"]
+         },
+
+         'whats your story jack': {
+            "correct" : 'one million years',
+            "list" : ["one million years", "6 years", "one billion years", "one trillion years"]
+        },
+
+        'take a picture': {
+            "correct" : 'one million years',
+            "list" : ["one million years", "6 years", "one billion years", "one trillion years"]
+        },
+
+        'thats a lot of lettuce': {
+            "correct" : 'one million years',
+            "list" : ["one million years", "6 years", "one billion years", "one trillion years"]
+        },
+
+        'that guy in the cheaters': {
+            "correct" : 'one million years',
+            "list" : ["one million years", "6 years", "one billion years", "one trillion years"]
+        },
+
   },
+
   
-]
