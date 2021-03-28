@@ -1,6 +1,6 @@
 
 
-var buttons = document.getElementById("btn")
+
 var questionIndex = 0
 
 var questions = [
@@ -37,18 +37,54 @@ var questions = [
  function nextQuestion() {
     var currentQuestion = questions[questionIndex];  
     var answerGrid = document.getElementById("answer-buttons");
+    answerGrid.innerHTML = "";
+
     var questionTitle = document.getElementById("question")
     questionTitle.innerText = currentQuestion.title
     currentQuestion.answers.forEach(function(answer,i){
 
-    
-    var anwserButton = document.createElement("button");
-        anwserButton.setAttribute("class","btn")
+        //1 Make the piece of html in js
+        var anwserButton = document.createElement("button");
+        //2 Dress that html up how u want!! give it text . class name ect...
+        anwserButton.setAttribute("class","btn choice-btn")
         anwserButton.innerText = answer
+        
+        //3 Stick that shabang on the page!! .appendCHild or jquery .append()
         answerGrid.appendChild(anwserButton)
     })
-    for (var index = 0; index < questions.length; index++) {
-        
-    }
+    
+    var buttons = document.querySelectorAll(".choice-btn")
+    console.log('buttons ?', buttons)
+   
+    buttons.forEach(function(btn)  {
+        btn.addEventListener("click", handleClick);
+    })
+
  } 
  nextQuestion()
+
+
+
+ function handleClick (event) {
+    console.log('we got clicked', event.target.innerText)
+    
+
+   if (event.target.innerText === questions[questionIndex].correct) {
+    console.log('good')
+
+
+   } else {
+       console.log('bad')
+
+    }
+
+    questionIndex++
+
+    if (questions.length <= questionIndex) {
+        console.log("gameOVER")
+    } else {
+        nextQuestion()
+    }
+    
+
+};
