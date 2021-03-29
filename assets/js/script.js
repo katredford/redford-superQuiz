@@ -1,6 +1,6 @@
 
 
-
+var time = questions.length * 15;
 var questionIndex = 0
 
 var questions = [
