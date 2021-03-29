@@ -3,7 +3,7 @@
 // var time = questions.length * 15;
 var questionIndex = 0
 var gotRight = 1
-
+var counter = 30
 var questions = [
 
          {title: 'how long does it take for a photon in the center of the sun to reach the surface?', 
@@ -11,24 +11,24 @@ var questions = [
              answers : ["one million years", "6 years", "one billion years", "one trillion years"]
             },
 
-        {title: 'whats your story jack', 
-            correct : 'one million years',
-            answers : ["one million years", "6 years", "one billion years", "one trillion years"]
+        {title: 'which isnt a primary color?', 
+            correct : 'green',
+            answers : ["red", "green", "blue", "yellow"]
             },
 
-        {title: 'take a picture', 
-            correct : 'one million years',
-            answers :["one million years", "6 years", "one billion years", "one trillion years"]
+        {title: 'which criptid is the best?', 
+            correct : 'nessie',
+            answers :["mothman", "bigfoot", "hodag", "nessie"]
             },
 
-        {title: 'thats a lot of lettuce', 
-            correct : 'one million years',
-            answers : ["one million years", "6 years", "one billion years", "one trillion years"]
+        {title: 'what to monarch caterpillars eat?', 
+            correct : 'milkweed',
+            answers : ["sandwich", "parsley", "milkweed", "daffodils"]
             },
 
-        {title: 'that guy in the cheaters',
-            correct : 'one million years',
-            answers : ["one million years", "6 years", "one billion years", "one trillion years"]
+        {title: 'who stole fire from the gods?',
+            correct : 'prometheus',
+            answers : ["medusa", "prometheus", "hercules", "perseus"]
             }
 
 ];
@@ -39,10 +39,24 @@ function startQuiz(){
     document.getElementById("startpart").onclick = function() {
     document.getElementById("startpart").style.display = "none";
         return false;
-        }
-    
-        console.log('clickCLACK')
+        } 
+    // document.getElementById("startpart").onclick = function(){
+    //     var countdown = function(){
+    //         console.log(counter);
+    //         counter--;
+    //         if(counter === 0);
+    //         clearInterval(startCountdown);
+
+    //         var startCountdown = setInterval(countdown,1000);
+    //         console.log(counter)
+
+    //     };
+        // var startCountdown = setInterval(countdown,1000);
+        
     };
+        
+    
+    
    
 
  function nextQuestion() {
