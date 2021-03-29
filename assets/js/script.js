@@ -1,7 +1,8 @@
 
 
-var time = questions.length * 15;
+// var time = questions.length * 15;
 var questionIndex = 0
+var gotRight = 1
 
 var questions = [
 
@@ -32,7 +33,17 @@ var questions = [
 
 ];
 
-
+function startQuiz(){
+    var startButton = document.getElementById("startpart")
+    startButton.addEventListener("click", startQuiz);
+    document.getElementById("startpart").onclick = function() {
+    document.getElementById("startpart").style.display = "none";
+        return false;
+        }
+    
+        console.log('clickCLACK')
+    };
+   
 
  function nextQuestion() {
     var currentQuestion = questions[questionIndex];  
@@ -70,8 +81,15 @@ var questions = [
     
 
    if (event.target.innerText === questions[questionIndex].correct) {
-    console.log('good')
+    console.log('good',gotRight) 
 
+    var scoreBox = document.getElementById("scorepart");
+    scoreBox.innerHTML ="";
+    var scorePlace = document.createElement("scoreSpot")
+    scorePlace.setAttribute("class","score")
+    scorePlace.innerText = gotRight++
+
+    scoreBox.appendChild(scorePlace)
 
    } else {
        console.log('bad')
@@ -87,4 +105,4 @@ var questions = [
     }
     
 
-};
+}; startQuiz()

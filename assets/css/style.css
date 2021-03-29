@@ -50,20 +50,36 @@ body {
 
 }
 
-.score {
+.score, .time{
     background-color: purple;
     border-radius: 25px;
     color: seashell;
     width: 100px;
     height: 100px;
     margin: 0px 10px 10px 10px;
+    text-align: center;
+    font-size: 35px;
+    
 }
 
-.time {
+.hide {
+    display: none;
+}
+
+.start-btn {
+
     background-color: purple;
     border-radius: 25px;
     color: seashell;
-    width: 100px;
+    width: 300px;
     height: 100px;
     margin: 0px 10px 10px 10px;
+    text-align: center;
+    font-size: 55px;
+    text-decoration: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
 }
