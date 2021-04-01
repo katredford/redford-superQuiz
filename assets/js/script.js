@@ -3,7 +3,7 @@
 // var time = questions.length * 15;
 var questionIndex = 0
 var gotRight = 1
-var counter = 30
+var counter = 5
 var questions = [
 
          {title: 'how long does it take for a photon in the center of the sun to reach the surface?', 
@@ -48,16 +48,19 @@ function startQuiz(){
             if(counter === 0){
             clearInterval(startCountdown);
           };
+
+          var timeBox = document.getElementById("timepart");
+          timeBox.innerHTML ="";
+          var timePlace = document.createElement("timeSpot")
+          timePlace.setAttribute("class","time")
+          timePlace.innerText = counter;
+      
+          timeBox.appendChild(timePlace)
+
         };
         var startCountdown = setInterval(countdown,1000);
 
-        var timeBox = document.getElementById("timepart");
-        timeBox.innerHTML ="";
-        var timePlace = document.createElement("timeSpot")
-        timePlace.setAttribute("class","time")
-        timePlace.innerText = counter--;
-    
-        timeBox.appendChild(timePlace)
+        
         
     };
         
