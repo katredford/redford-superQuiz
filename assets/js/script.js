@@ -40,23 +40,29 @@ function startQuiz(){
     document.getElementById("startpart").style.display = "none";
         return false;
         } 
-    // document.getElementById("startpart").onclick = function(){
-    //     var countdown = function(){
-    //         console.log(counter);
-    //         counter--;
-    //         if(counter === 0);
-    //         clearInterval(startCountdown);
 
-    //         var startCountdown = setInterval(countdown,1000);
-    //         console.log(counter)
+    document.getElementById("startpart").onclick = function(){
+        var countdown = function(){
+            console.log(counter);
+            counter--;
+            if(counter === 0){
+            clearInterval(startCountdown);
+          };
+        };
+        var startCountdown = setInterval(countdown,1000);
 
-    //     };
-        // var startCountdown = setInterval(countdown,1000);
+        var timeBox = document.getElementById("timepart");
+        timeBox.innerHTML ="";
+        var timePlace = document.createElement("timeSpot")
+        timePlace.setAttribute("class","time")
+        timePlace.innerText = counter--;
+    
+        timeBox.appendChild(timePlace)
         
     };
         
     
-    
+   
    
 
  function nextQuestion() {
@@ -119,4 +125,6 @@ function startQuiz(){
     }
     
 
-}; startQuiz()
+}; 
+
+}; startQuiz();
