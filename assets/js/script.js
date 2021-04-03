@@ -36,12 +36,14 @@ var questions = [
 function startQuiz(){
     var startButton = document.getElementById("startpart")
     startButton.addEventListener("click", startQuiz);
-    document.getElementById("startpart").onclick = function() {
-    document.getElementById("startpart").style.display = "none";
-        return false;
-        } 
+    // document.getElementById("startpart").onclick = function() {
+    // // document.getElementById("startpart").style.display = "none";
+    //     return false;
+    //     } 
 
     document.getElementById("startpart").onclick = function(){
+        document.getElementById("startpart").style.display = "none";
+        document.getElementById("question-container").classList.remove("hide")
         var countdown = function(){
             console.log(counter);
             counter--;
@@ -122,6 +124,8 @@ function startQuiz(){
     questionIndex++
 
     if (questions.length <= questionIndex) {
+        document.getElementById("scoreinput").classList.remove("hide")
+        document.getElementById("question-container").classList.add("hide")
         console.log("gameOVER")
     } else {
         nextQuestion()
