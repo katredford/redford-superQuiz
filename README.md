@@ -28,9 +28,9 @@ https://github.com/katredford/redford-superQuiz
 <h3 align="center" width="100%">
  <br>1. Start Quiz</br>
 <p align="center" width="100%">
-    <img src="./public/assets/images/start.png" width="60%"/>
+    <img src="./assets/images/start.png" width="60%"/>
 </p>
 2. Can you get all the questions right?
 <p align="center" width="100%">
-    <img src="./public/assets/images/quiz.png" width="60%"/>
+    <img src="./assets/images/quiz.png" width="60%"/>
 </p>
